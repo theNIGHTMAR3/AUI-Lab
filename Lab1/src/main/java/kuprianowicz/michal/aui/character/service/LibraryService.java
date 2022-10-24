@@ -47,6 +47,12 @@ public class LibraryService {
     }
 
     public void delete(Long id) {
-        repository.delete(repository.find(id).orElseThrow());
+        try{
+            repository.delete(repository.find(id).orElseThrow());
+        }
+        catch(Exception e){
+            System.out.println( "Library with given ID doesn't exist");
+        }
+
     }
 }

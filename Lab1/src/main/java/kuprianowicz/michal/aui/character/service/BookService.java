@@ -32,7 +32,7 @@ public class BookService {
         return repository.findAll();
     }
 
-    public List<Book> findAll(String author) {
+    public List<Book> findAllWithAuthor(String author) {
         return repository.findAllByAuthor(author);
     }
 
@@ -45,7 +45,12 @@ public class BookService {
     }
 
     public void delete(Long id) {
-        repository.delete(repository.find(id).orElseThrow());
+        try{
+            repository.delete(repository.find(id).orElseThrow());
+        }
+        catch(Exception e){
+            System.out.println( "Book with given ID doesn't exist");
+        }
     }
 
 }
