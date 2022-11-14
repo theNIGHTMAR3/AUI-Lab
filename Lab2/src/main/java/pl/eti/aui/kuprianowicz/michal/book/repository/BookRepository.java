@@ -1,3 +1,4 @@
+/*
 package pl.eti.aui.kuprianowicz.michal.book.repository;
 
 import pl.eti.aui.kuprianowicz.michal.book.entity.Book;
@@ -11,22 +12,28 @@ import java.util.Optional;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
-
-
-    Optional<Book> findById(long id);
-
+    */
+/*Optional<Book> findById(long id);
 
     Optional<Book> findByTitle(String title);
 
-    List<Book> findAllByAuthor(String author);
+
+    void setBookTitleByAuthor(Long id, String newTitle);
 
     @Modifying
     @Query("update Book b set b.title = ?2 where b.Id = ?1")
-    void setBookTitleByAuthor(Long id, String newTitle);
+    void setBookTitleById(Long id, String newTitle);*//*
 
 
 
-    /*private DataStore store;
+
+}
+
+
+
+*/
+/*
+private DataStore store;
 
     @Autowired
     public BookRepository(DataStore store) {
@@ -76,6 +83,9 @@ public interface BookRepository extends JpaRepository<Book, Long> {
         return store.getBookStream()
                 .filter(book -> book.getAuthor().equals(author))
                 .collect(Collectors.toList());
-    }*/
+    }
+
 
 }
+*/
+

@@ -1,3 +1,4 @@
+/*
 package pl.eti.aui.kuprianowicz.michal.configuration;
 
 
@@ -29,12 +30,32 @@ public class InitializedData {
     @PostConstruct
     private synchronized void init()
     {
+
+        Library empik= Library.builder()
+                .Id(1L)
+                .name("empik")
+                .address("Niepodleglosci 130")
+                .establishedYear(1990)
+                .build();
+
+        Library ateneum= Library.builder()
+                .Id(2L)
+                .name("Ateneum")
+                .address("3 Maja")
+                .establishedYear(2005)
+                .build();
+
+        libraryService.create(empik);
+        libraryService.create(ateneum);
+
+
         Book LOTR= Book.builder()
                 .Id(1L)
                 .title("The Lord of the Rings")
                 .author("J.R.R. Tolkien")
                 .year(1968)
                 .genre("fantasy")
+                .existsIn(ateneum)
                 .build();
 
         Book hobbit= Book.builder()
@@ -43,6 +64,7 @@ public class InitializedData {
                 .author("J.R.R. Tolkien")
                 .year(1937)
                 .genre("fantasy")
+                .existsIn(ateneum)
                 .build();
 
         Book year1984= Book.builder()
@@ -51,6 +73,7 @@ public class InitializedData {
                 .author("George Orwell")
                 .year(1949)
                 .genre("fiction")
+                .existsIn(empik)
                 .build();
 
         Book potop= Book.builder()
@@ -59,6 +82,7 @@ public class InitializedData {
                 .author("Henryk Sienkiewicz")
                 .year(1886)
                 .genre("historical")
+                .existsIn(empik)
                 .build();
 
         bookService.create(LOTR);
@@ -67,26 +91,8 @@ public class InitializedData {
         bookService.create(potop);
 
 
-        Library empik= Library.builder()
-                .Id(1L)
-                .name("empik")
-                .address("Niepodleglosci 130")
-                .establishedYear(1990)
-                .books(Arrays.asList(LOTR,hobbit,year1984))
-                .build();
-
-        Library ateneum= Library.builder()
-                .Id(1L)
-                .name("Ateneum")
-                .address("3 Maja")
-                .establishedYear(2005)
-                .books(Arrays.asList(hobbit,year1984,potop))
-                .build();
-
-        libraryService.create(empik);
-        libraryService.create(ateneum);
-
     }
 
 
 }
+*/

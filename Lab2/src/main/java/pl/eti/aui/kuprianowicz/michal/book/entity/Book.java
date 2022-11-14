@@ -2,6 +2,7 @@ package pl.eti.aui.kuprianowicz.michal.book.entity;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import pl.eti.aui.kuprianowicz.michal.library.entity.Library;
 
 
 import java.io.Serializable;
@@ -16,7 +17,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="books")
-public class Book implements Serializable {
+public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long Id;
@@ -28,6 +30,10 @@ public class Book implements Serializable {
     private int year;
     
     private String genre;
+
+    @ManyToOne
+    @JoinColumn(name = "library")
+    private Library existsIn;
 
     @Override
     public String toString(){

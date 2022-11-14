@@ -1,3 +1,4 @@
+/*
 package pl.eti.aui.kuprianowicz.michal.book.service;
 
 
@@ -24,17 +25,10 @@ public class BookService {
         return repository.findById(id);
     }
 
-    public Optional<Book> findByTitle(String title) {
-        return repository.findByTitle(title);
-    }
-
     public List<Book> findAll() {
         return repository.findAll();
     }
 
-    public List<Book> findAllWithAuthor(String author) {
-        return repository.findAllByAuthor(author);
-    }
 
     @Transactional
     public Book create(Book book) {
@@ -49,15 +43,18 @@ public class BookService {
     @Transactional
     public void delete(long id) {
         repository.deleteById(id);
-
     }
 
-    @Transactional
+*/
+/*@Transactional
     public void updateTitle(Long id, String newTitle) {
         repository.findById(id).ifPresent(book -> {
 
-            repository.setBookTitleByAuthor(id, newTitle);
+            repository.setBookTitleById(id, newTitle);
         });
-    }
+    }*//*
+
+
 
 }
+*/

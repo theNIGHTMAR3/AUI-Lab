@@ -1,3 +1,4 @@
+/*
 package pl.eti.aui.kuprianowicz.michal.library.service;
 
 import pl.eti.aui.kuprianowicz.michal.library.entity.Library;
@@ -22,10 +23,6 @@ public class LibraryService {
 
     public Optional<Library> find(Long id) {
         return repository.findById(id);
-    }
-
-    public Optional<Library> find(String name) {
-        return repository.findByName(name);
     }
 
     public List<Library> findAll() {
@@ -53,3 +50,4 @@ public class LibraryService {
 
     }
 }
+*/

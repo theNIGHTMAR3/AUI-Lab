@@ -10,7 +10,6 @@ public class Lab2Application {
 		System.out.println("before spring");
 		SpringApplication.run(Lab2Application.class, args);
 		System.out.println("after spring");
-
 	}
 
 }

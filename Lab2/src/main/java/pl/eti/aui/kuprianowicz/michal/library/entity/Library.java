@@ -4,34 +4,29 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 import pl.eti.aui.kuprianowicz.michal.book.entity.Book;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Getter
 @Setter
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@SuperBuilder
-@EqualsAndHashCode
 
+@EqualsAndHashCode
 @Entity
 @Table(name = "libraries")
 public class Library implements Serializable {
 
-    @javax.persistence.Id
-    private Long Id;
+    @Id
+    private long Id;
 
     private String name;
 
     private String address;
 
     private int establishedYear;
-
-    @OneToMany(mappedBy = "library")
-    private List<Book> books;
 
     @Override
     public String toString()
@@ -40,7 +35,6 @@ public class Library implements Serializable {
                 "Id = "+ getId()+
                 ", name = "+ getName()+
                 ", address = "+ getAddress()+
-                ", established year = "+ getEstablishedYear()+
-                ", books="+ getBooks()+" }\n";
+                ", established year = "+ getEstablishedYear()+" }\n";
     }
 }
