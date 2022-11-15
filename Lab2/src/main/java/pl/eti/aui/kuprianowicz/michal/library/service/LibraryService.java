@@ -1,4 +1,3 @@
-/*
 package pl.eti.aui.kuprianowicz.michal.library.service;
 
 import pl.eti.aui.kuprianowicz.michal.library.entity.Library;
@@ -40,14 +39,7 @@ public class LibraryService {
     }
 
     @Transactional
-    public void delete(Long id) {
-        try{
-            repository.delete(repository.findById(id).orElseThrow());
-        }
-        catch(Exception e){
-            System.out.println( "Library with given ID doesn't exist");
-        }
-
+    public void delete(Long Id) {
+        repository.deleteById(Id);
     }
 }
-*/

@@ -13,7 +13,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @SuperBuilder
-@EqualsAndHashCode
 
 @Entity
 @Table(name="books")
@@ -21,7 +20,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    private Long Id;
+    private Long id;
 
     private String title;
     
@@ -33,7 +32,7 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "library")
-    private Library existsIn;
+    private Library library;
 
     @Override
     public String toString(){
@@ -42,6 +41,6 @@ public class Book {
                 ", title = "+ getTitle()+
                 ", author = "+ getAuthor()+
                 ", year = "+ getYear()+
-                ", genre="+ getGenre()+" }";
+                ", genre = "+ getGenre()+" }";
     }
 }

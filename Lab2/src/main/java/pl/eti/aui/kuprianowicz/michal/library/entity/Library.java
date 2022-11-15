@@ -20,13 +20,17 @@ import java.util.List;
 public class Library implements Serializable {
 
     @Id
-    private long Id;
+    private long id;
 
     private String name;
 
     private String address;
 
     private int establishedYear;
+
+    @OneToMany
+    @ToString.Exclude
+    private List<Book> containsBooks;
 
     @Override
     public String toString()
