@@ -30,15 +30,15 @@ public class LibraryController {
     }
 
 
-    /*@GetMapping
-    public ResponseEntity<GetLibrariesResponse> getLibrarys() {
-        return ResponseEntity.ok(GetLibrarysResponse.entityToDtoMapper().apply(libraryService.findAll()));
-    }*/
+    @GetMapping
+    public ResponseEntity<GetLibrariesResponse> getLibraries() {
+        return ResponseEntity.ok(GetLibrariesResponse.entityToDtoMapper().apply(libraryService.findAll()));
+    }
 
 
-    @GetMapping("{id}")
-    public ResponseEntity<GetLibraryResponse> getLibrary(@PathVariable("id") Long id) {
-        Optional<Library> library = libraryService.find(id);
+    @GetMapping("{libraryId}")
+    public ResponseEntity<GetLibraryResponse> getLibrary(@PathVariable("libraryId") Long libraryId) {
+        Optional<Library> library = libraryService.find(libraryId);
         return library.map(value -> ResponseEntity.ok(GetLibraryResponse.entityToDtoMapper().apply(value)))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -50,13 +50,13 @@ public class LibraryController {
                 .dtoToEntityMapper(() -> null)
                 .apply(request);
         library = libraryService.create(library);
-        return ResponseEntity.created(builder.pathSegment("api", "libraries", "{id}").buildAndExpand(library.getId()).toUri()).build();
+        return ResponseEntity.created(builder.pathSegment("api", "libraries", "{libraryId}").buildAndExpand(library.getLibraryId()).toUri()).build();
     }
 
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteLibrary(@PathVariable("id") Long id) {
-        Optional<Library> library = libraryService.find(id);
+    @DeleteMapping("{libraryId}")
+    public ResponseEntity<Void> deleteLibrary(@PathVariable("libraryId") Long libraryId) {
+        Optional<Library> library = libraryService.find(libraryId);
         if (library.isPresent()) {
             // Delete the library's books first
             List<Book> booksOFTheLibrary = bookService.findAll(library.get());
@@ -64,7 +64,7 @@ public class LibraryController {
                 bookService.delete(s.getId());
             }
             // Then delete the library
-            libraryService.delete(id);
+            libraryService.delete(libraryId);
             return ResponseEntity.accepted().build();
         } else {
             return ResponseEntity.notFound().build();
@@ -72,9 +72,9 @@ public class LibraryController {
     }
 
 
-    @PutMapping("{id}")
-    public ResponseEntity<Void> updateLibrary(@RequestBody UpdateLibraryRequest request, @PathVariable("id") Long id) {
-        Optional<Library> library = libraryService.find(id);
+    @PutMapping("{libraryId}")
+    public ResponseEntity<Void> updateLibrary(@RequestBody UpdateLibraryRequest request, @PathVariable("libraryId") Long libraryId) {
+        Optional<Library> library = libraryService.find(libraryId);
         if (library.isPresent()) {
             UpdateLibraryRequest.dtoToEntityUpdater().apply(library.get(), request);
             libraryService.update(library.get());

@@ -20,7 +20,9 @@ import java.util.List;
 public class Library implements Serializable {
 
     @Id
-    private long id;
+    //@GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue
+    private long libraryId;
 
     private String name;
 
@@ -36,7 +38,7 @@ public class Library implements Serializable {
     public String toString()
     {
         return "Library{ "+
-                "Id = "+ getId()+
+                "Id = "+ this.getLibraryId()+
                 ", name = "+ getName()+
                 ", address = "+ getAddress()+
                 ", established year = "+ getEstablishedYear()+" }\n";

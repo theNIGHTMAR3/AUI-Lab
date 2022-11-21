@@ -1,16 +1,7 @@
-/*
 package pl.eti.aui.kuprianowicz.michal.book.dto;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
-
+import lombok.*;
+import pl.eti.aui.kuprianowicz.michal.book.entity.Book;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,28 +17,28 @@ import java.util.function.Function;
 @EqualsAndHashCode
 public class GetBooksResponse {
 
-    @Setter
     @Getter
+    @Setter
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor(access = AccessLevel.PRIVATE)
     @ToString
     @EqualsAndHashCode
-    public static class Book {
 
+
+    public static class BookEntry {
         private Long id;
-
         private String title;
-
     }
-    @Singular
-    private List<Book> books;
 
-    public static Function<Collection<pl.eti.aui.kuprianowicz.michal.book.entity.Book>, GetBooksResponse> entityToDtoMapper() {
+    @Singular
+    private List<BookEntry> books;
+
+    public static Function<Collection<Book>, GetBooksResponse> entityToDtoMapper() {
         return books -> {
             GetBooksResponseBuilder response = GetBooksResponse.builder();
             books.stream()
-                    .map(book -> Book.builder()
+                    .map(book -> BookEntry.builder()
                             .id(book.getId())
                             .title(book.getTitle())
                             .build())
@@ -56,4 +47,5 @@ public class GetBooksResponse {
         };
     }
 }
-*/
+
+

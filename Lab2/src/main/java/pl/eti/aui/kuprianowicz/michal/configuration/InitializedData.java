@@ -29,14 +29,14 @@ public class InitializedData {
     {
 
         Library empik= Library.builder()
-                .id(1L)
+                .libraryId(1L)
                 .name("empik")
                 .address("Niepodleglosci 130")
                 .establishedYear(1990)
                 .build();
 
         Library ateneum= Library.builder()
-                .id(2L)
+                .libraryId(2L)
                 .name("Ateneum")
                 .address("3 Maja")
                 .establishedYear(2005)

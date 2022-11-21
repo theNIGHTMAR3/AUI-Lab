@@ -25,10 +25,10 @@ public class BookController {
     }
 
 
-   /* @GetMapping
+    @GetMapping
     public ResponseEntity<GetBooksResponse> getBooks() {
         return ResponseEntity.ok(GetBooksResponse.entityToDtoMapper().apply(bookService.findAll()));
-    }*/
+    }
 
 
     @GetMapping("{id}")

@@ -1,4 +1,3 @@
-/*
 package pl.eti.aui.kuprianowicz.michal.library.dto;
 
 import lombok.*;
@@ -26,7 +25,7 @@ public class GetLibrariesResponse {
     @EqualsAndHashCode
     public static class Library {
 
-        private long id;
+        private long libraryId;
 
         private String name;
 
@@ -42,7 +41,7 @@ public class GetLibrariesResponse {
             GetLibrariesResponse.GetLibrariesResponseBuilder response = GetLibrariesResponse.builder();
             libraries.stream()
                     .map(user -> Library.builder()
-                            .id(user.getId())
+                            .libraryId(user.getLibraryId())
                             .name(user.getName())
                             .build())
                     .forEach(response::library);
@@ -50,4 +49,4 @@ public class GetLibrariesResponse {
         };
     }
 
-}*/
+}

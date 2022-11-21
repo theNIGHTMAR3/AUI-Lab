@@ -14,7 +14,7 @@ import java.util.function.Function;
 @EqualsAndHashCode
 public class GetLibraryResponse {
 
-    private long id;
+    private long libraryId;
 
     private String name;
 
@@ -25,7 +25,7 @@ public class GetLibraryResponse {
 
     public static Function<Library, GetLibraryResponse> entityToDtoMapper() {
         return user -> GetLibraryResponse.builder()
-                .id(user.getId())
+                .libraryId(user.getLibraryId())
                 .name(user.getName())
                 .address(user.getAddress())
                 .establishedYear(user.getEstablishedYear())

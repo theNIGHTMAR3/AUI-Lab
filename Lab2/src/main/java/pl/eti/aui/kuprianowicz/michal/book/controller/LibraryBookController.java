@@ -22,7 +22,7 @@ import pl.eti.aui.kuprianowicz.michal.library.service.LibraryService;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/libraries/{id}/books")
+@RequestMapping("api/libraries/{libraryId}/books")
 public class LibraryBookController {
 
     private final BookService bookService;
@@ -38,16 +38,16 @@ public class LibraryBookController {
     }
 
 
-    /*@GetMapping
-    public ResponseEntity<GetBooksResponse> getCharacters(@PathVariable("id") String id) {
-        Optional<Library> library = libraryService.find(id);
+    @GetMapping
+    public ResponseEntity<GetBooksResponse> getCharacters(@PathVariable("libraryId") Long libraryId) {
+        Optional<Library> library = libraryService.find(libraryId);
         return library.map(value -> ResponseEntity.ok(GetBooksResponse.entityToDtoMapper().apply(bookService.findAll(value))))
                 .orElseGet(() -> ResponseEntity.notFound().build());
-    }*/
+    }
 
 
     @GetMapping("{id}")
-    public ResponseEntity<GetBookResponse> getCharacter(@PathVariable("id") long libraryId,
+    public ResponseEntity<GetBookResponse> getCharacter(@PathVariable("libraryId") long libraryId,
                                                         @PathVariable("id") long id) {
         Optional<Library> library = libraryService.find(libraryId);
         if (library.isPresent()) {
@@ -61,24 +61,24 @@ public class LibraryBookController {
 
 
     @PostMapping
-    public ResponseEntity<Void> createCharacter(@PathVariable("id") long id,
+    public ResponseEntity<Void> createCharacter(@PathVariable("libraryId") long libraryId,
                                                 @RequestBody CreateBookRequest request,
                                                 UriComponentsBuilder builder) {
-        Optional<Library> library = libraryService.find(id);
+        Optional<Library> library = libraryService.find(libraryId);
         if (library.isPresent()) {
             Book book = CreateBookRequest
                     .dtoToEntityMapper(library::get)
                     .apply(request);
             book = bookService.create(book);
-            return ResponseEntity.created(builder.pathSegment("api", "libraries", "{id}", "books", "{id}")
-                    .buildAndExpand(library.get().getId(), book.getId()).toUri()).build();
+            return ResponseEntity.created(builder.pathSegment("api", "libraries", "{libraryId}", "books", "{id}")
+                    .buildAndExpand(library.get().getLibraryId(), book.getId()).toUri()).build();
         } else {
             return ResponseEntity.notFound().build();
         }
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteCharacter(@PathVariable("id") long libraryId,
+    public ResponseEntity<Void> deleteCharacter(@PathVariable("libraryId") long libraryId,
                                                 @PathVariable("id") long id) {
         Optional<Library> library = libraryService.find(libraryId);
         if (library.isPresent()) {
@@ -95,7 +95,7 @@ public class LibraryBookController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Void> updateCharacter(@PathVariable("id") long LibraryId,
+    public ResponseEntity<Void> updateCharacter(@PathVariable("libraryId") long LibraryId,
                                                 @RequestBody UpdateBookRequest request,
                                                 @PathVariable("id") long id) {
         Optional<Library> library = libraryService.find(LibraryId);

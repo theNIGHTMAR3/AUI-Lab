@@ -18,23 +18,17 @@ import java.util.function.Supplier;
 public class CreateLibraryRequest {
 
 
-    private Long id;
-
-
     private String name;
 
-
     private String address;
-
 
     private int establishedYear;
 
 
 
     public static Function<CreateLibraryRequest, Library> dtoToEntityMapper(
-            Supplier<Book> characterSupplier) {
+            Supplier<Book> bookSupplier) {
         return request -> Library.builder()
-                .id(request.getId())
                 .name(request.getName())
                 .address(request.getAddress())
                 .establishedYear(request.getEstablishedYear())
