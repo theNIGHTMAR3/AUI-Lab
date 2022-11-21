@@ -79,7 +79,7 @@ DELETE http://localhost:8080/api/books/1
 DELETE http://localhost:8080/api/libraries/1
 
 ###
-POST http://localhost:8080/api/libraries/1/books
+POST http://localhost:8080/api/libraries/2/books
 Content-Type: application/json
 
 {
