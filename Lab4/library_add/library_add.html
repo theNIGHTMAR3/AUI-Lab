@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="Library web application"/>
+  <meta name="keywords" content="RPG"/>
+  <meta name="author" content="Michał Kuprianowicz"/>
+  <title>Library</title>
+  <link rel="stylesheet" href="../styles.css"/>
+  <link rel="stylesheet" href="library_view.css"/>
+  <script src="../script.js" defer="defer"></script>
+  <script type="module" src="library_view.js" defer="defer"></script>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <h1>Library</h1>
+  </header>
+
+  <nav class="navigation-bar">
+    <ul>
+      <li><a href="../library_list/library_list.html">libraries</a></li>
+    </ul>
+  </nav>
+
+    <section class="main-section">
+      <article class="text--justified">
+        <header><h2>Adding library form:</h2></header>
+
+        <form class="library__form" id="infoForm">
+          <label for="libraryId">libraryId:</label>
+          <input class="ui-control ui-input" id="libraryId" name="libraryId"/>
+
+          <label for="name">Name:</label>
+          <input class="ui-control ui-input" id="name" name="name"/>
+
+          <label for="address">Address:</label>
+          <input class="ui-control ui-input" id="address" name="address"/>
+
+          <label for="establishedYear">Established Year:</label>
+          <input class="ui-control ui-input" id="establishedYear" name="establishedYear" type="number"/>
+
+          <input class="ui-control ui-button" type="submit" name="Update"/>
+        </form>
+      </article>
+
+    </section>
+
+
+  </div>
+  </body>
+</html>

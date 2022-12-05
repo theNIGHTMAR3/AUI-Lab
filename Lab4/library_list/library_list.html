@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Library</title>
+        <link rel="stylesheet" href="../styles.css"/>
+        <script src="../script.js" defer="defer"></script>
+        <script type="module" src="library_list.js" defer="defer"></script> <!-- allows to import functions between separate files -->
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Library</h1>
+            </header>
+
+            <nav class="navigation-bar">
+                <ul>
+                    <li><a href="library_list.html">libraries</a></li>
+                </ul>
+            </nav>
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <header><h2>Libraries</h2></header>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>name</th>
+                                <th>view</th>
+                                <th>delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <td>name</td>
+                                <td><a href="#">view</a></td>
+                                <td>
+                                    <button class="ui-button ui-control">delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+
+
+            <form action="../library_add/library_add.html">
+                <input type="submit" value="Library add" />
+            </form>
+
+
+            <footer class="footer">
+                <p>Michał Kuprianowicz</p>
+
+            </footer>
+        </div>
+    </body>
+</html>
