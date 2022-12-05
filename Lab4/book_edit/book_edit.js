@@ -6,13 +6,13 @@ window.addEventListener('load', () => {
 
     infoForm.addEventListener('submit', event => updateInfoAction(event));
 
-    fetchAndDisplayStudent();
+    fetchAndDisplayBook();
 });
 
 /**
  * Fetches currently logged library's books and updates edit form.
  */
-function fetchAndDisplayStudent() {
+function fetchAndDisplayBook() {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -40,7 +40,7 @@ function updateInfoAction(event) {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            fetchAndDisplayStudent();
+            fetchAndDisplayBook();
         }
     };
     xhttp.open("PUT", getBackendUrl() + '/api/libraries/' + getParameterByName('library') + '/books/'

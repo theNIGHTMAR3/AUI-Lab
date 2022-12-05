@@ -47,7 +47,7 @@ public class LibraryController {
         Library library = CreateLibraryRequest
                 .dtoToEntityMapper()
                 .apply(request);
-        //library = libraryService.create(library);
+        libraryService.create(library);
         return ResponseEntity
                 .created(builder
                         .pathSegment("api", "libraries", "{libraryId}")

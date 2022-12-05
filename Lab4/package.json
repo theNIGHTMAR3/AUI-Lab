@@ -1,0 +1,20 @@
+{
+  "name": "simple-rpg",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "School game",
+  "keywords": [
+    "RPG"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://git.pg.edu.pl/internet-services-architectures/simple-rpg"
+  },
+  "license": "MIT",
+  "author": "Michał (psysiu) Wójcik",
+  "scripts": {
+    "dev": "http-server -p 8089 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "0.12.3"
+  }
+}

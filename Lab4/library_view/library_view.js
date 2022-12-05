@@ -24,8 +24,7 @@ function fetchAndDisplayBooks() {
             displayStudents(JSON.parse(this.responseText))
         }
     };
-    xhttp.open("GET", getBackendUrl() + '/api/libraries/' + getParameterByName('library') + '/books/'
-        + getParameterByName('book'), true);
+    xhttp.open("GET", getBackendUrl() + '/api/libraries/' + getParameterByName('library') + '/books',true);
     xhttp.send();
 }
 
@@ -69,7 +68,7 @@ function deleteBook(book) {
             fetchAndDisplayBooks();
         }
     };
-    xhttp.open("DELETE", getBackendUrl() + '/api/libraries/' + getParameterByName('libarry')
+    xhttp.open("DELETE", getBackendUrl() + '/api/libraries/' + getParameterByName('library')
         + '/books/' + book, true);
     xhttp.send();
 }

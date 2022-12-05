@@ -17,7 +17,6 @@ function fetchAndDisplayLibraries() {
     };
     xhttp.open("GET", getBackendUrl() + '/api/libraries', true);
     xhttp.send();
-    //alert("library loaded");
 }
 
 /**
