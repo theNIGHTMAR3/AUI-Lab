@@ -3,7 +3,6 @@ import {getBackendUrl} from '../js/configuration.js';
 
 window.addEventListener('load', () => {
     const infoForm = document.getElementById('infoForm');
-
     infoForm.addEventListener('submit', event => updateInfoAction(event));
 
     fetchAndDisplayBook();
@@ -42,10 +41,10 @@ function updateInfoAction(event) {
             fetchAndDisplayBook();
         }
     };
+
     xhttp.open("POST", getBackendUrl() + '/api/libraries', true);
 
     const request = {
-        'libraryId': document.getElementById('libraryId').value,
         'name': document.getElementById('name').value,
         'address': document.getElementById('address').value,
         'establishedYear': parseInt(document.getElementById('establishedYear').value)
