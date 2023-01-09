@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Library web application"/>
+        <meta name="keywords" content="RPG"/>
+        <meta name="author" content="Michał Kuprianowicz"/>
+        <title>Library</title>
+        <link rel="stylesheet" href="../styles.css"/>
+        <link rel="stylesheet" href="library_view.css"/>
+        <script src="../script.js" defer="defer"></script>
+        <script type="module" src="library_view.js" defer="defer"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Library</h1>
+            </header>
+
+            <nav class="navigation-bar">
+                <ul>
+                    <li><a href="../library_list/library_list.html">libraries</a></li>
+                </ul>
+            </nav>
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <header><h2 id="libraryId">libraryId</h2></header>
+                    <section>
+                        <h3>Details</h3>
+                        <div class="details-grid">
+
+                            <label for="name">Name:</label><span id="name">name</span>
+                            <label for="address">Address:</label><span id="address">address</span>
+                            <label for="establishedYear">EstablishedYear:</label><span id="establishedYear">establishedYear</span>
+
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Books</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>name</th>
+                                    <th>edit</th>
+                                    <th>delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <tr>
+                                    <td>name</td>
+                                    <td><a href="#">view</a></td>
+                                    <td><a href="#">edit</a></td>
+                                    <td>
+                                        <button class="ui-button ui-control">delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </article>
+            </section>
+
+            <form id="addingButton" action="../book_add/book_add.html">
+                <input type="submit" value="Book add" />
+            </form>
+            <footer class="footer">
+                <p>Michał Kuprianowicz</p>
+
+            </footer>
+        </div>
+    </body>
+</html>

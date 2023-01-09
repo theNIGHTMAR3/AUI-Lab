@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  book-service:
+    container_name: book-container
+    build:
+      context: ./Lab3-book
+
+  library-service:
+    container_name: library-container
+    build:
+      context: ./Lab3-library
+    depends_on:
+      - book-service
+
+
+  gateway-service:
+    container_name: gateway-container
+    build:
+      context: ./Lab3-rest-gateway
+    depends_on:
+      - book-service
+      - library-service
+
+
+  frontend-service:
+    container_name: javascript-container
+    build:
+      context: ./frontend
+    depends_on:
+      - gateway-service
+
+  proxy:
+    container_name: proxy-container
+    build:
+      context: ./proxy
+    ports:
+      - 80:80
+    depends_on:
+      - frontend-service
+    tty: true

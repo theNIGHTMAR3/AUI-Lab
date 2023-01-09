@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Library web application"/>
+        <meta name="keywords" content="RPG"/>
+        <meta name="author" content="Michał Kuprianowicz"/>
+        <title>School</title>
+        <link rel="stylesheet" href="../styles.css"/>
+        <link rel="stylesheet" href="book_edit.css"/>
+        <script src="../script.js" defer="defer"></script>
+        <script type="module" src="book_edit.js" defer="defer"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Library</h1>
+            </header>
+
+            <nav class="navigation-bar">
+                <ul>
+                    <li><a href="../library_list/library_list.html">libraries</a></li>
+                </ul>
+            </nav>
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <header><h2>Edit Book info</h2></header>
+
+                    <form class="book__form" id="infoForm">
+
+                        <label for="title">Title:</label>
+                        <input class="ui-control ui-input" id="title" name="title"/>
+
+                        <label for="author">Author:</label>
+                        <input class="ui-control ui-input" id="author" name="author"/>
+
+                        <label for="year">Year:</label>
+                        <input class="ui-control ui-input" id="year" name="year" type="number"/>
+
+                        <label for="genre">Genre:</label>
+                        <input class="ui-control ui-input" id="genre" name="genre" />
+
+                        <input class="ui-control ui-button" type="submit" name="Update"/>
+                    </form>
+                </article>
+
+            </section>
+
+            <footer class="footer">
+                <p>Michał Kuprianowicz</p>
+
+            </footer>
+        </div>
+    </body>
+</html>

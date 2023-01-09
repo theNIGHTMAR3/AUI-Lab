@@ -1,0 +1,99 @@
+
+###
+GET http://localhost:8080/api/books/1
+
+
+
+###
+GET http://localhost:8080/api/books
+
+
+###
+GET http://localhost:8080/api/libraries/1
+
+
+###
+GET http://localhost:8080/api/libraries
+
+
+###
+GET http://localhost:8080/api/libraries/1/books
+
+
+###
+GET http://localhost:8080/api/libraries/1/books/3
+
+
+
+###
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Krzyżacy",
+  "author": "Henryk Sienkiewicz",
+  "year": 1900,
+  "gdp": 2.3,
+  "genre": "historical"
+}
+
+
+###
+POST http://localhost:8080/api/libraries
+Content-Type: application/json
+
+{
+"name": "Biblioteka PG",
+"address": "Wydział ETI",
+"establishedYear": 1950
+}
+
+
+
+###
+PUT http://localhost:8080/api/books/4
+Content-Type: application/json
+
+{
+  "title": "ReplacedBook",
+  "author": "me xD",
+  "year": 2022,
+  "genre": "fun"
+}
+
+###
+PUT http://localhost:8080/api/libraries/2
+Content-Type: application/json
+
+{
+  "name": "ReplacedLibrary",
+  "address": "here xD",
+  "establishedYear": 2022
+}
+
+
+###
+DELETE http://localhost:8080/api/books/1
+
+###
+DELETE http://localhost:8080/api/libraries/1
+
+###
+POST http://localhost:8080/api/libraries/2/books
+Content-Type: application/json
+
+{
+  "title": "NewBooooook",
+  "author": "Not me",
+  "year": 2000,
+  "genre": "fiction"
+}
+
+
+###
+PUT http://localhost:8080/api/books/2/title
+Content-Type: application/json
+
+{
+  "title": "Changed Name"
+}
