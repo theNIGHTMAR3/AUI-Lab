@@ -89,11 +89,3 @@ Content-Type: application/json
   "genre": "fiction"
 }
 
-
-###
-PUT http://localhost:8084/api/books/2/title
-Content-Type: application/json
-
-{
-  "title": "Changed Name"
-}

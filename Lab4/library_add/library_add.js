@@ -54,6 +54,6 @@ function updateInfoAction(event) {
 
     xhttp.send(JSON.stringify(request));
 
-    alert("Library added successfully!")
+    //alert("Library added successfully!")
 }
 
