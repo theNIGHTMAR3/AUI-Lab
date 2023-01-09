@@ -5,18 +5,18 @@
         <title>Library</title>
         <link rel="stylesheet" href="../styles.css"/>
         <script src="../script.js" defer="defer"></script>
-        <script type="module" src="library_list.js" defer="defer"></script> <!-- allows to import functions between separate files -->
+        <script type="module" src="book_list.js" defer="defer"></script> <!-- allows to import functions between separate files -->
     </head>
     <body>
         <div class="container">
             <header class="header">
-                <h1>Library</h1>
+                <h1>Books</h1>
             </header>
 
             <nav class="navigation-bar">
                 <ul>
-                    <li><a href="library_list.html">libraries</a></li>
-                    <li><a href="../book_list/book_list.html">books</a></li>
+                    <li><a href="../library_list/library_list.html">libraries</a></li>
+                    <li><a href="book_list.html">books</a></li>
                 </ul>
             </nav>
 
@@ -26,9 +26,9 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>name</th>
+                                <th>title</th>
                                 <th>view</th>
-                                <th>edit</th>
+                                <!--<th>edit</th>!-->
                                 <th>delete</th>
                             </tr>
                         </thead>
@@ -44,12 +44,6 @@
                     </table>
                 </article>
             </section>
-
-
-            <form action="../library_add/library_add.html">
-                <input type="submit" value="Library add" />
-            </form>
-
 
             <footer class="footer">
                 <p>Michał Kuprianowicz</p>

@@ -7,9 +7,9 @@
         <meta name="author" content="Michał Kuprianowicz"/>
         <title>School</title>
         <link rel="stylesheet" href="../styles.css"/>
-        <link rel="stylesheet" href="book_edit.css"/>
+        <link rel="stylesheet" href="library_edit.css"/>
         <script src="../script.js" defer="defer"></script>
-        <script type="module" src="book_edit.js" defer="defer"></script>
+        <script type="module" src="library_edit.js" defer="defer"></script>
     </head>
     <body>
         <div class="container">
@@ -26,21 +26,18 @@
 
             <section class="main-section">
                 <article class="text--justified">
-                    <header><h2>Edit Book info</h2></header>
+                    <header><h2>Edit Library info</h2></header>
 
-                    <form class="book__form" id="infoForm">
+                    <form class="library__form" id="infoForm">
 
-                        <label for="title">Title:</label>
-                        <input class="ui-control ui-input" id="title" name="title"/>
+                        <label for="name">Name:</label>
+                        <input class="ui-control ui-input" id="name" name="name"/>
 
-                        <label for="author">Author:</label>
-                        <input class="ui-control ui-input" id="author" name="author"/>
+                        <label for="address">Address:</label>
+                        <input class="ui-control ui-input" id="address" name="address"/>
 
-                        <label for="year">Year:</label>
-                        <input class="ui-control ui-input" id="year" name="year" type="number"/>
-
-                        <label for="genre">Genre:</label>
-                        <input class="ui-control ui-input" id="genre" name="genre" />
+                        <label for="establishedYear">Established Year:</label>
+                        <input class="ui-control ui-input" id="establishedYear" name="establishedYear" type="number"/>
 
                         <input class="ui-control ui-button" type="submit" name="Update"/>
                     </form>
