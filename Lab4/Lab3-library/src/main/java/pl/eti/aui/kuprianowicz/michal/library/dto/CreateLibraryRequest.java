@@ -5,7 +5,6 @@ import lombok.*;
 import pl.eti.aui.kuprianowicz.michal.library.entity.Library;
 
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 @Getter
 @Setter
